@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8lo-ej-Lg6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Conversation View Controller-->
+        <scene sceneID="0VO-J0-ydI">
+            <objects>
+                <viewController id="FgJ-A7-Wot" customClass="ConversationViewController" customModule="SimpleChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ptv-oo-RqO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ai6-js-da9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <connections>
+                                    <segue destination="P8u-C6-T8v" kind="embed" identifier="ChatViewController" id="p8U-63-OyX"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-iY-zNz" userLabel="SendingView">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-lb-BVV" userLabel="Send Video Button">
+                                        <rect key="frame" x="327" y="5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="bdz-tx-ycf"/>
+                                            <constraint firstAttribute="height" constant="40" id="mZL-au-P9Z"/>
+                                        </constraints>
+                                        <state key="normal" image="movie"/>
+                                        <connections>
+                                            <action selector="onVideoButtonTap:" destination="FgJ-A7-Wot" eventType="touchUpInside" id="1T0-dX-9S4"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type message" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MHi-qf-eTw">
+                                        <rect key="frame" x="16" y="10" width="247" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <connections>
+                                            <action selector="messageTextFieldChanged" destination="FgJ-A7-Wot" eventType="editingChanged" id="YL5-zQ-kFz"/>
+                                            <outlet property="delegate" destination="FgJ-A7-Wot" id="e2R-qw-YcJ"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aG-ao-rSG" userLabel="Send Text Button">
+                                        <rect key="frame" x="279" y="5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0Ip-7F-i3P"/>
+                                            <constraint firstAttribute="width" constant="40" id="Zh8-LB-uXh"/>
+                                        </constraints>
+                                        <state key="normal" image="send"/>
+                                        <connections>
+                                            <action selector="onSendButtonTap:" destination="FgJ-A7-Wot" eventType="touchUpInside" id="r1J-BA-VFe"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9aG-ao-rSG" firstAttribute="centerY" secondItem="hzg-iY-zNz" secondAttribute="centerY" id="Gui-ls-5mC"/>
+                                    <constraint firstItem="MHi-qf-eTw" firstAttribute="leading" secondItem="hzg-iY-zNz" secondAttribute="leading" constant="16" id="L71-A7-D8n"/>
+                                    <constraint firstItem="aF5-lb-BVV" firstAttribute="centerY" secondItem="hzg-iY-zNz" secondAttribute="centerY" id="SvS-me-x5l"/>
+                                    <constraint firstAttribute="trailing" secondItem="aF5-lb-BVV" secondAttribute="trailing" constant="8" id="Wbh-mf-aGf"/>
+                                    <constraint firstItem="MHi-qf-eTw" firstAttribute="centerY" secondItem="hzg-iY-zNz" secondAttribute="centerY" id="Yg5-UE-PEi"/>
+                                    <constraint firstItem="aF5-lb-BVV" firstAttribute="leading" secondItem="9aG-ao-rSG" secondAttribute="trailing" constant="8" id="qiW-bV-fgX"/>
+                                    <constraint firstAttribute="height" constant="50" id="qoh-dJ-TyH"/>
+                                    <constraint firstItem="9aG-ao-rSG" firstAttribute="leading" secondItem="MHi-qf-eTw" secondAttribute="trailing" constant="16" id="vQ5-MD-fwL"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hzg-iY-zNz" firstAttribute="top" secondItem="Ai6-js-da9" secondAttribute="bottom" id="84B-Pj-0ul"/>
+                            <constraint firstItem="1Yc-H4-qSn" firstAttribute="bottom" secondItem="hzg-iY-zNz" secondAttribute="bottom" id="A3M-VG-XZ6"/>
+                            <constraint firstItem="Ai6-js-da9" firstAttribute="top" secondItem="Ptv-oo-RqO" secondAttribute="top" id="DbT-4C-VhW"/>
+                            <constraint firstItem="hzg-iY-zNz" firstAttribute="leading" secondItem="1Yc-H4-qSn" secondAttribute="leading" id="F4A-Mw-DUn"/>
+                            <constraint firstItem="Ai6-js-da9" firstAttribute="leading" secondItem="1Yc-H4-qSn" secondAttribute="leading" id="Umb-ds-x9q"/>
+                            <constraint firstItem="Ai6-js-da9" firstAttribute="trailing" secondItem="1Yc-H4-qSn" secondAttribute="trailing" id="XaV-Va-nJK"/>
+                            <constraint firstItem="hzg-iY-zNz" firstAttribute="trailing" secondItem="1Yc-H4-qSn" secondAttribute="trailing" id="jvP-YU-GM4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Yc-H4-qSn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UDN-9c-q2L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="EVe-OU-8Qi">
+                            <connections>
+                                <action selector="UIBarButtonItem:" destination="FgJ-A7-Wot" id="AHH-7F-VVx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editorBottomConstraint" destination="A3M-VG-XZ6" id="qEv-YD-fXs"/>
+                        <outlet property="messageEditorTextField" destination="MHi-qf-eTw" id="B1x-zp-XqU"/>
+                        <outlet property="sendButton" destination="9aG-ao-rSG" id="rjH-yx-a1V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XyX-h3-FZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3141.5999999999999" y="960.2698650674663"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="i3c-Nx-vu6">
+            <objects>
+                <viewController id="P8u-C6-T8v" customClass="ChatViewController" customModule="SimpleChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gR9-iY-dvq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gHI-ut-6gM" userLabel="Chat Table View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.65074837919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LeftTextCellRI" id="wYC-hC-MEp" customClass="ChatTableViewCell" customModule="SimpleChat" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wYC-hC-MEp" id="i2c-Va-Uw4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="redraw" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="2cq-ju-bWO" userLabel="bubbleView" customClass="BubbleView" customModule="SimpleChat">
+                                                    <rect key="frame" x="72" y="23" width="232" height="37.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="bubble_nine_white"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ChatMessage" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3y2-xO-dTW" userLabel="chatLabel">
+                                                    <rect key="frame" x="97" y="33" width="197" height="17.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.36078431370000003" green="0.38431372549999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="@TimeStamp" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzu-eb-djE" userLabel="timestamp">
+                                                    <rect key="frame" x="97" y="65.5" width="207" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-E1-cMM" customClass="AvatarView" customModule="SimpleChat">
+                                                    <rect key="frame" x="27" y="23" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="Qwv-U9-hA7"/>
+                                                        <constraint firstAttribute="height" constant="40" id="vmK-RI-akf"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="letterBackgroundColor">
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="letterString" value="X"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="letterColor">
+                                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3y2-xO-dTW" firstAttribute="top" secondItem="PAt-E1-cMM" secondAttribute="top" constant="10" id="7ri-Z9-hpe"/>
+                                                <constraint firstItem="PAt-E1-cMM" firstAttribute="top" secondItem="i2c-Va-Uw4" secondAttribute="topMargin" constant="12" id="H5J-lQ-DEu"/>
+                                                <constraint firstItem="2cq-ju-bWO" firstAttribute="top" secondItem="3y2-xO-dTW" secondAttribute="top" constant="-10" id="HUC-b7-UsJ"/>
+                                                <constraint firstItem="Vzu-eb-djE" firstAttribute="trailing" secondItem="2cq-ju-bWO" secondAttribute="trailing" id="Kcd-dO-din"/>
+                                                <constraint firstItem="PAt-E1-cMM" firstAttribute="leading" secondItem="i2c-Va-Uw4" secondAttribute="leadingMargin" constant="12" id="RPx-pK-Pyo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3y2-xO-dTW" secondAttribute="trailing" constant="66" id="VSp-vN-ZZL"/>
+                                                <constraint firstItem="2cq-ju-bWO" firstAttribute="leading" secondItem="3y2-xO-dTW" secondAttribute="leading" constant="-25" id="Zl6-bi-Qiv"/>
+                                                <constraint firstItem="2cq-ju-bWO" firstAttribute="trailing" secondItem="3y2-xO-dTW" secondAttribute="trailing" constant="10" id="Zyz-BY-se3"/>
+                                                <constraint firstItem="Vzu-eb-djE" firstAttribute="leading" secondItem="3y2-xO-dTW" secondAttribute="leading" id="e3e-Ew-Xf4"/>
+                                                <constraint firstItem="Vzu-eb-djE" firstAttribute="top" secondItem="2cq-ju-bWO" secondAttribute="bottom" constant="5" id="pcE-z2-5Ym"/>
+                                                <constraint firstAttribute="bottom" secondItem="Vzu-eb-djE" secondAttribute="bottom" constant="10" id="qeg-QG-hdP"/>
+                                                <constraint firstItem="3y2-xO-dTW" firstAttribute="leading" secondItem="PAt-E1-cMM" secondAttribute="trailing" constant="30" id="qp1-7r-ATj"/>
+                                                <constraint firstItem="2cq-ju-bWO" firstAttribute="bottom" secondItem="3y2-xO-dTW" secondAttribute="bottom" constant="10" id="wVz-VH-ktq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="avatarView" destination="PAt-E1-cMM" id="hmK-3X-1EX"/>
+                                            <outlet property="bubbleView" destination="2cq-ju-bWO" id="pwB-Za-Ond"/>
+                                            <outlet property="chatLabel" destination="3y2-xO-dTW" id="E7z-PV-roe"/>
+                                            <outlet property="timestampLabel" destination="Vzu-eb-djE" id="Mpp-SP-bcF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RightTextCellRI" id="wMj-pV-yWq" userLabel="RightEventCellRI" customClass="ChatTableViewCell" customModule="SimpleChat">
+                                        <rect key="frame" x="0.0" y="118" width="375" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wMj-pV-yWq" id="vX8-h0-MUn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="redraw" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-qf-Efm" userLabel="bubbleView" customClass="BubbleView" customModule="SimpleChat">
+                                                    <rect key="frame" x="71" y="23" width="232" height="39.5"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="image" value="bubble_nine_orange"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="@ChatMessage" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iW-eo-ufv" userLabel="chatLabel">
+                                                    <rect key="frame" x="81" y="33" width="202" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CJ-as-Y8k" customClass="AvatarView" customModule="SimpleChat">
+                                                    <rect key="frame" x="308" y="23" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="O6y-C3-Ocj"/>
+                                                        <constraint firstAttribute="height" constant="40" id="a80-vx-Bs5"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="letterString" value="G"/>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="letterBackgroundColor">
+                                                            <color key="value" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="letterColor">
+                                                            <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="@TimeStamp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-Rt-huL" userLabel="timestamp">
+                                                    <rect key="frame" x="71" y="67.5" width="212" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Afj-qf-Efm" firstAttribute="leading" secondItem="4iW-eo-ufv" secondAttribute="leading" constant="-10" id="0OL-C4-zOe"/>
+                                                <constraint firstItem="4iW-eo-ufv" firstAttribute="top" secondItem="1CJ-as-Y8k" secondAttribute="top" constant="10" id="4xG-Br-Gby"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1CJ-as-Y8k" secondAttribute="trailing" constant="12" id="AiR-yi-jUl"/>
+                                                <constraint firstItem="1CJ-as-Y8k" firstAttribute="top" secondItem="vX8-h0-MUn" secondAttribute="topMargin" constant="12" id="GlO-e3-9zd"/>
+                                                <constraint firstItem="0u5-Rt-huL" firstAttribute="trailing" secondItem="4iW-eo-ufv" secondAttribute="trailing" id="NYV-Qu-5Z5"/>
+                                                <constraint firstItem="0u5-Rt-huL" firstAttribute="top" secondItem="Afj-qf-Efm" secondAttribute="bottom" constant="5" id="PYp-zy-H9Q"/>
+                                                <constraint firstItem="Afj-qf-Efm" firstAttribute="trailing" secondItem="4iW-eo-ufv" secondAttribute="trailing" constant="20" id="WIs-un-rza"/>
+                                                <constraint firstItem="Afj-qf-Efm" firstAttribute="bottom" secondItem="4iW-eo-ufv" secondAttribute="bottom" constant="10" id="a3C-ie-2pb"/>
+                                                <constraint firstItem="0u5-Rt-huL" firstAttribute="leading" secondItem="Afj-qf-Efm" secondAttribute="leading" id="ePf-HZ-LOj"/>
+                                                <constraint firstItem="1CJ-as-Y8k" firstAttribute="leading" secondItem="4iW-eo-ufv" secondAttribute="trailing" constant="25" id="fzY-qA-6Nk"/>
+                                                <constraint firstItem="Afj-qf-Efm" firstAttribute="top" secondItem="4iW-eo-ufv" secondAttribute="top" constant="-10" id="kte-ve-qBJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="0u5-Rt-huL" secondAttribute="bottom" constant="10" id="pwU-KO-Yv3"/>
+                                                <constraint firstItem="4iW-eo-ufv" firstAttribute="leading" secondItem="vX8-h0-MUn" secondAttribute="leadingMargin" constant="66" id="zeY-NU-aUh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="avatarView" destination="1CJ-as-Y8k" id="aAV-gJ-C9w"/>
+                                            <outlet property="bubbleView" destination="Afj-qf-Efm" id="hwb-Mh-qFb"/>
+                                            <outlet property="chatLabel" destination="4iW-eo-ufv" id="Bs9-Ye-F0f"/>
+                                            <outlet property="timestampLabel" destination="0u5-Rt-huL" id="OZj-oG-FNk"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="P8u-C6-T8v" id="9Ov-no-Itv"/>
+                                    <outlet property="delegate" destination="P8u-C6-T8v" id="9yD-gD-YX6"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gHI-ut-6gM" firstAttribute="leading" secondItem="gR9-iY-dvq" secondAttribute="leading" id="Ki5-zX-Tjr"/>
+                            <constraint firstAttribute="trailing" secondItem="gHI-ut-6gM" secondAttribute="trailing" id="paG-HC-j1X"/>
+                            <constraint firstAttribute="bottom" secondItem="gHI-ut-6gM" secondAttribute="bottom" id="us7-RN-Zp1"/>
+                            <constraint firstItem="gHI-ut-6gM" firstAttribute="top" secondItem="gR9-iY-dvq" secondAttribute="top" id="zH4-Ge-W9B"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jSL-PN-EmH"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="gHI-ut-6gM" id="ZbF-ME-Hdl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sg-jF-0XW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3873" y="938"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a0h-Lz-ILl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8lo-ej-Lg6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DNx-CA-dXu">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FgJ-A7-Wot" kind="relationship" relationship="rootViewController" id="Bfs-RC-zqC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nqj-mV-deu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2358" y="960"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bubble_nine_orange" width="40" height="30"/>
+        <image name="bubble_nine_white" width="40" height="30"/>
+        <image name="movie" width="457" height="490"/>
+        <image name="send" width="100" height="100"/>
+    </resources>
+</document>

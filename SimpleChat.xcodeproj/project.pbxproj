@@ -8,15 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		260FB70120D0442000376BDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB70020D0442000376BDD /* AppDelegate.swift */; };
-		260FB70320D0442000376BDD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB70220D0442000376BDD /* ViewController.swift */; };
-		260FB70620D0442000376BDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260FB70420D0442000376BDD /* Main.storyboard */; };
-		260FB70820D0442600376BDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 260FB70720D0442600376BDD /* Assets.xcassets */; };
 		260FB70B20D0442600376BDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260FB70920D0442600376BDD /* LaunchScreen.storyboard */; };
 		260FB71620D0442600376BDD /* SimpleChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB71520D0442600376BDD /* SimpleChatTests.swift */; };
 		260FB72120D0442600376BDD /* SimpleChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB72020D0442600376BDD /* SimpleChatUITests.swift */; };
 		260FB74720D0F9FB00376BDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 260FB74620D0F9FB00376BDD /* .gitignore */; };
 		260FB74920D0FA0100376BDD /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 260FB74820D0FA0100376BDD /* Cartfile */; };
 		260FB74D20D0FB3D00376BDD /* SwiftWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */; };
+		260FB75220D1028700376BDD /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB75120D1028700376BDD /* WebSocketController.swift */; };
+		26DFB74720D1282B00E81FD0 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DFB74620D1282B00E81FD0 /* Chat.storyboard */; };
+		26DFB75320D12BE300E81FD0 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75020D12BE300E81FD0 /* ChatTableViewCell.swift */; };
+		26DFB75420D12BE300E81FD0 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75120D12BE300E81FD0 /* BubbleView.swift */; };
+		26DFB75520D12BE300E81FD0 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75220D12BE300E81FD0 /* AvatarView.swift */; };
+		26DFB75D20D1AC2600E81FD0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75C20D1AC2600E81FD0 /* Message.swift */; };
+		26DFB76120D1BFB500E81FD0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB76020D1BFB500E81FD0 /* ChatViewController.swift */; };
+		26DFB76D20D27EAD00E81FD0 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB76C20D27EAD00E81FD0 /* ChatViewModel.swift */; };
+		26DFB76F20D28A1200E81FD0 /* DateTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB76E20D28A1200E81FD0 /* DateTimeController.swift */; };
+		26DFB77420D2AB7D00E81FD0 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB77320D2AB7D00E81FD0 /* MessageController.swift */; };
+		26DFB77B20D2ABFD00E81FD0 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB77920D2ABFC00E81FD0 /* UIColor+Additions.swift */; };
+		26DFB77C20D2ABFD00E81FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DFB77A20D2ABFC00E81FD0 /* Assets.xcassets */; };
+		26DFB77F20D2AC6C00E81FD0 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB77E20D2AC6C00E81FD0 /* InMemoryStorage.swift */; };
+		26DFB78220D3161D00E81FD0 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78120D3161D00E81FD0 /* ConversationViewController.swift */; };
+		26DFB78420D3164300E81FD0 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78320D3164300E81FD0 /* ConversationViewModel.swift */; };
+		26DFB78720D3246A00E81FD0 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,9 +52,6 @@
 /* Begin PBXFileReference section */
 		260FB6FD20D0442000376BDD /* SimpleChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		260FB70020D0442000376BDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		260FB70220D0442000376BDD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		260FB70520D0442000376BDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		260FB70720D0442600376BDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		260FB70A20D0442600376BDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260FB70C20D0442600376BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		260FB71120D0442600376BDD /* SimpleChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +63,22 @@
 		260FB74620D0F9FB00376BDD /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		260FB74820D0FA0100376BDD /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftWebSocket.framework; path = Carthage/Build/iOS/SwiftWebSocket.framework; sourceTree = "<group>"; };
+		260FB75120D1028700376BDD /* WebSocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
+		26DFB74620D1282B00E81FD0 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
+		26DFB75020D12BE300E81FD0 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		26DFB75120D12BE300E81FD0 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		26DFB75220D12BE300E81FD0 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		26DFB75C20D1AC2600E81FD0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		26DFB76020D1BFB500E81FD0 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		26DFB76C20D27EAD00E81FD0 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		26DFB76E20D28A1200E81FD0 /* DateTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeController.swift; sourceTree = "<group>"; };
+		26DFB77320D2AB7D00E81FD0 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
+		26DFB77920D2ABFC00E81FD0 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		26DFB77A20D2ABFC00E81FD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26DFB77E20D2AC6C00E81FD0 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
+		26DFB78120D3161D00E81FD0 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		26DFB78320D3164300E81FD0 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
+		26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,10 +133,13 @@
 		260FB6FF20D0442000376BDD /* SimpleChat */ = {
 			isa = PBXGroup;
 			children = (
+				26DFB77820D2ABFC00E81FD0 /* Resources */,
+				26DFB78520D3245B00E81FD0 /* Extensions */,
+				260FB75020D1026E00376BDD /* UI */,
+				260FB74F20D1026700376BDD /* Controllers */,
+				26DFB75B20D1ABA600E81FD0 /* Models */,
+				26DFB77D20D2AC4800E81FD0 /* Storages */,
 				260FB70020D0442000376BDD /* AppDelegate.swift */,
-				260FB70220D0442000376BDD /* ViewController.swift */,
-				260FB70420D0442000376BDD /* Main.storyboard */,
-				260FB70720D0442600376BDD /* Assets.xcassets */,
 				260FB70920D0442600376BDD /* LaunchScreen.storyboard */,
 				260FB70C20D0442600376BDD /* Info.plist */,
 			);
@@ -141,6 +170,88 @@
 				260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		260FB74F20D1026700376BDD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				260FB75120D1028700376BDD /* WebSocketController.swift */,
+				26DFB76E20D28A1200E81FD0 /* DateTimeController.swift */,
+				26DFB77320D2AB7D00E81FD0 /* MessageController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		260FB75020D1026E00376BDD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB78020D3161D00E81FD0 /* Conversation */,
+				26DFB74520D127F300E81FD0 /* Chat */,
+				26DFB74F20D12BE300E81FD0 /* Views */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		26DFB74520D127F300E81FD0 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB76020D1BFB500E81FD0 /* ChatViewController.swift */,
+				26DFB76C20D27EAD00E81FD0 /* ChatViewModel.swift */,
+				26DFB74620D1282B00E81FD0 /* Chat.storyboard */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		26DFB74F20D12BE300E81FD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB75020D12BE300E81FD0 /* ChatTableViewCell.swift */,
+				26DFB75120D12BE300E81FD0 /* BubbleView.swift */,
+				26DFB75220D12BE300E81FD0 /* AvatarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		26DFB75B20D1ABA600E81FD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB75C20D1AC2600E81FD0 /* Message.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		26DFB77820D2ABFC00E81FD0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB77920D2ABFC00E81FD0 /* UIColor+Additions.swift */,
+				26DFB77A20D2ABFC00E81FD0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		26DFB77D20D2AC4800E81FD0 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB77E20D2AC6C00E81FD0 /* InMemoryStorage.swift */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		26DFB78020D3161D00E81FD0 /* Conversation */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB78120D3161D00E81FD0 /* ConversationViewController.swift */,
+				26DFB78320D3164300E81FD0 /* ConversationViewModel.swift */,
+			);
+			path = Conversation;
+			sourceTree = "<group>";
+		};
+		26DFB78520D3245B00E81FD0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,11 +359,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DFB74720D1282B00E81FD0 /* Chat.storyboard in Resources */,
 				260FB74920D0FA0100376BDD /* Cartfile in Resources */,
 				260FB74720D0F9FB00376BDD /* .gitignore in Resources */,
 				260FB70B20D0442600376BDD /* LaunchScreen.storyboard in Resources */,
-				260FB70820D0442600376BDD /* Assets.xcassets in Resources */,
-				260FB70620D0442000376BDD /* Main.storyboard in Resources */,
+				26DFB77C20D2ABFD00E81FD0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +405,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				260FB70320D0442000376BDD /* ViewController.swift in Sources */,
+				26DFB77F20D2AC6C00E81FD0 /* InMemoryStorage.swift in Sources */,
+				26DFB78220D3161D00E81FD0 /* ConversationViewController.swift in Sources */,
+				26DFB76F20D28A1200E81FD0 /* DateTimeController.swift in Sources */,
+				26DFB75420D12BE300E81FD0 /* BubbleView.swift in Sources */,
+				26DFB75520D12BE300E81FD0 /* AvatarView.swift in Sources */,
+				26DFB77420D2AB7D00E81FD0 /* MessageController.swift in Sources */,
+				26DFB75D20D1AC2600E81FD0 /* Message.swift in Sources */,
+				260FB75220D1028700376BDD /* WebSocketController.swift in Sources */,
+				26DFB75320D12BE300E81FD0 /* ChatTableViewCell.swift in Sources */,
+				26DFB76120D1BFB500E81FD0 /* ChatViewController.swift in Sources */,
+				26DFB78720D3246A00E81FD0 /* UIViewController+Alerts.swift in Sources */,
+				26DFB76D20D27EAD00E81FD0 /* ChatViewModel.swift in Sources */,
+				26DFB78420D3164300E81FD0 /* ConversationViewModel.swift in Sources */,
 				260FB70120D0442000376BDD /* AppDelegate.swift in Sources */,
+				26DFB77B20D2ABFD00E81FD0 /* UIColor+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,14 +455,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		260FB70420D0442000376BDD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				260FB70520D0442000376BDD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		260FB70920D0442600376BDD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -15,33 +15,61 @@ protocol WebSocketControllerDelegate: class {
     func didClose()
     func didReceiveError(error: Error)
     func didReceiveString(text: String)
-    func didReceiveData(data: NSData)
+    func didReceiveData(data: Data)
 }
 
 class WebSocketController {
 
+    // MARK: - Public interface
+
     let webSocket: WebSocket
+    var coderController: DataCoderControllerProtocol
 
     weak var delegate: WebSocketControllerDelegate?
 
-    init() {
+    init(coderController: DataCoderControllerProtocol = DataCoderController()) {
+        self.coderController = coderController
         self.webSocket = WebSocket("ws://echo.websocket.org")
         self.webSocket.delegate = self
         self.webSocket.binaryType = .nsData
+        self.coderController.delegate = self
     }
 
     func sendText(text: String) {
         webSocket.send(text)
     }
 
-    func sendData(data: NSData) {
-        webSocket.send(data)
+    func sendData(url: URL) {
+        DispatchQueue.global(qos: .utility).async {
+            do {
+                let data = try Data(contentsOf: url)
+                self.sendDataChunks(data: data)
+            } catch {
+                // data reading error from url
+            }
+        }
+    }
+
+    func sendData(data: Data) {
+        sendDataChunks(data: data)
     }
 
     func open() {
         webSocket.open()
         self.webSocket.delegate = self
         self.webSocket.binaryType = .nsData
+    }
+
+    // MARK: - Private
+
+    fileprivate func sendDataChunks(data: Data) {
+        print ("Input video size: \(data.count)")
+        DispatchQueue.global(qos: .utility).async {
+            let dataChunks = self.coderController.encode(data: data)
+            for dataChunk in dataChunks {
+                self.webSocket.send(dataChunk)
+            }
+        }
     }
 
 }
@@ -70,7 +98,19 @@ extension WebSocketController: WebSocketDelegate {
     }
 
     func webSocketMessageData(_ data: Data) {
-        delegate?.didReceiveData(data: NSData(data: data))
+        DispatchQueue.global(qos: .utility).async {
+            self.coderController.decode(data: data)
+        }
     }
+
+}
+
+extension WebSocketController: DataCoderDelegateProtocol {
+
+    func receivedData(data: Data) {
+        print ("Output video size: \(data.count)")
+        delegate?.didReceiveData(data: data)
+    }
+
 
 }

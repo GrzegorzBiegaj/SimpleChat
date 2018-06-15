@@ -30,6 +30,7 @@
 		26DFB78220D3161D00E81FD0 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78120D3161D00E81FD0 /* ConversationViewController.swift */; };
 		26DFB78420D3164300E81FD0 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78320D3164300E81FD0 /* ConversationViewModel.swift */; };
 		26DFB78720D3246A00E81FD0 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */; };
+		26DFB78920D3916F00E81FD0 /* DataCoderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78820D3916F00E81FD0 /* DataCoderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		26DFB78120D3161D00E81FD0 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		26DFB78320D3164300E81FD0 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		26DFB78820D3916F00E81FD0 /* DataCoderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				260FB75120D1028700376BDD /* WebSocketController.swift */,
 				26DFB76E20D28A1200E81FD0 /* DateTimeController.swift */,
 				26DFB77320D2AB7D00E81FD0 /* MessageController.swift */,
+				26DFB78820D3916F00E81FD0 /* DataCoderController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 				26DFB75320D12BE300E81FD0 /* ChatTableViewCell.swift in Sources */,
 				26DFB76120D1BFB500E81FD0 /* ChatViewController.swift in Sources */,
 				26DFB78720D3246A00E81FD0 /* UIViewController+Alerts.swift in Sources */,
+				26DFB78920D3916F00E81FD0 /* DataCoderController.swift in Sources */,
 				26DFB76D20D27EAD00E81FD0 /* ChatViewModel.swift in Sources */,
 				26DFB78420D3164300E81FD0 /* ConversationViewModel.swift in Sources */,
 				260FB70120D0442000376BDD /* AppDelegate.swift in Sources */,

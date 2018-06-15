@@ -17,7 +17,8 @@ class ConversationViewController: UIViewController {
 
     let viewModel = ConversationViewModel()
     let chatViewModel = ChatViewModel()
-    var webSocketController = WebSocketController()
+    let webSocketController = WebSocketController()
+
     lazy var videoPicker = UIImagePickerController()
     
     // MARK: - Outlets
@@ -142,7 +143,10 @@ extension ConversationViewController: WebSocketControllerDelegate {
         chatViewController?.reloadData()
     }
 
-    func didReceiveData(data: NSData) { }
+    func didReceiveData(data: Data) {
+
+        print ("data arrived")
+    }
 
 }
 
@@ -152,8 +156,8 @@ extension ConversationViewController: UIImagePickerControllerDelegate, UINavigat
 
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let url = info[UIImagePickerControllerMediaURL] as? URL else { return }
-        print("videoURL:\(String(describing: url))")
-        dismiss(animated: true, completion: nil)
+        webSocketController.sendData(url: url)
+        self.dismiss(animated: true, completion: nil)
     }
 
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

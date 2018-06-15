@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import AVKit
 
 class ChatViewController: UIViewController {
 
     let leftTextCellName = "LeftTextCellRI"
     let rightTextCellName = "RightTextCellRI"
+    let leftVideoCellName = "LeftVideoCellRI"
+    let rightVideoCellName = "RightVideoCellRI"
 
     // MARK: - Controllers
 
@@ -26,12 +29,6 @@ class ChatViewController: UIViewController {
 
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.backgroundColor = .silverGrey
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        scrollTable(animated: false)
     }
 
     func reloadData() {
@@ -49,6 +46,16 @@ class ChatViewController: UIViewController {
         }
     }
 
+    func playVideo(url: URL) {
+        let player = AVPlayer(url: url)
+        let vc = AVPlayerViewController()
+        vc.player = player
+
+        present(vc, animated: true) {
+            vc.player?.play()
+        }
+    }
+
 }
 
 // MARK: - Tableview data source
@@ -62,10 +69,20 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let message = viewModel.chats.chats[indexPath.row]
 
-        let cellName = message.message.side == .received ? leftTextCellName : rightTextCellName
+        var cellName = ""
+        if case .text = message.message.entry {
+            cellName = message.message.side == .received ? leftTextCellName : rightTextCellName
+        } else {
+            cellName = message.message.side == .received ? leftVideoCellName : rightVideoCellName
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath)
-        if let cell = cell as? ChatTableViewCell {
+
+        if case .text = message.message.entry, let cell = cell as? ChatTextTableViewCell {
             cell.message = message
+        }
+        if case .movie = message.message.entry, let cell = cell as? ChatVideoTableViewCell {
+            cell.message = message
+            cell.delegate = self
         }
         return cell
     }
@@ -79,4 +96,14 @@ extension ChatViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+// MARK: - ChatVideoTableViewCellProtocol
+
+extension ChatViewController: ChatVideoTableViewCellProtocol {
+    func playButtonPressed(url: URL) {
+        playVideo(url: url)
+    }
+    
+
 }

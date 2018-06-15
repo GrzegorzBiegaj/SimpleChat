@@ -109,7 +109,9 @@ extension WebSocketController: DataCoderDelegateProtocol {
 
     func receivedData(data: Data) {
         print ("Output video size: \(data.count)")
-        delegate?.didReceiveData(data: data)
+        DispatchQueue.main.async {
+            self.delegate?.didReceiveData(data: data)
+        }
     }
 
 

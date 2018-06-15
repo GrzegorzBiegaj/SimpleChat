@@ -34,6 +34,7 @@ class DataCoderController: DataCoderControllerProtocol {
         return addHeaders(data: data)
     }
 
+    // data is returned as a DataCoderDelegateProtocol delegate
     func decode(data: Data) {
         addChunk(data: data)
         if isDataCompleted && !isOutputError {

@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ChatTableViewCell: UITableViewCell {
+class ChatTextTableViewCell: UITableViewCell {
 
-
+    // MARK: - Outlets
     @IBOutlet weak var avatarView: AvatarView!
     @IBOutlet weak var chatLabel: UILabel!
     @IBOutlet weak var bubbleView: BubbleView!
@@ -29,5 +29,5 @@ class ChatTableViewCell: UITableViewCell {
             backgroundColor = .silverGrey
         }
     }
-
+    
 }

@@ -18,6 +18,7 @@ class ConversationViewController: UIViewController {
     let viewModel = ConversationViewModel()
     let chatViewModel = ChatViewModel()
     let webSocketController = WebSocketController()
+    let fileController = FileController()
 
     lazy var videoPicker = UIImagePickerController()
     
@@ -144,8 +145,9 @@ extension ConversationViewController: WebSocketControllerDelegate {
     }
 
     func didReceiveData(data: Data) {
-
-        print ("data arrived")
+        guard let url = fileController.saveMovie(data: data) else { return }
+        viewModel.addReceivedVideo(url: url)
+        chatViewController?.reloadData()
     }
 
 }
@@ -156,6 +158,8 @@ extension ConversationViewController: UIImagePickerControllerDelegate, UINavigat
 
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let url = info[UIImagePickerControllerMediaURL] as? URL else { return }
+        viewModel.addSentVideo(url: url)
+        chatViewController?.reloadData()
         webSocketController.sendData(url: url)
         self.dismiss(animated: true, completion: nil)
     }

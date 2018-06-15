@@ -16,7 +16,7 @@
 		260FB74D20D0FB3D00376BDD /* SwiftWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */; };
 		260FB75220D1028700376BDD /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB75120D1028700376BDD /* WebSocketController.swift */; };
 		26DFB74720D1282B00E81FD0 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DFB74620D1282B00E81FD0 /* Chat.storyboard */; };
-		26DFB75320D12BE300E81FD0 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75020D12BE300E81FD0 /* ChatTableViewCell.swift */; };
+		26DFB75320D12BE300E81FD0 /* ChatTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75020D12BE300E81FD0 /* ChatTextTableViewCell.swift */; };
 		26DFB75420D12BE300E81FD0 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75120D12BE300E81FD0 /* BubbleView.swift */; };
 		26DFB75520D12BE300E81FD0 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75220D12BE300E81FD0 /* AvatarView.swift */; };
 		26DFB75D20D1AC2600E81FD0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75C20D1AC2600E81FD0 /* Message.swift */; };
@@ -31,6 +31,8 @@
 		26DFB78420D3164300E81FD0 /* ConversationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78320D3164300E81FD0 /* ConversationViewModel.swift */; };
 		26DFB78720D3246A00E81FD0 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */; };
 		26DFB78920D3916F00E81FD0 /* DataCoderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78820D3916F00E81FD0 /* DataCoderController.swift */; };
+		26DFB78B20D4217100E81FD0 /* ChatVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78A20D4217100E81FD0 /* ChatVideoTableViewCell.swift */; };
+		26DFB78D20D4371D00E81FD0 /* FileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78C20D4371D00E81FD0 /* FileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +68,7 @@
 		260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftWebSocket.framework; path = Carthage/Build/iOS/SwiftWebSocket.framework; sourceTree = "<group>"; };
 		260FB75120D1028700376BDD /* WebSocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
 		26DFB74620D1282B00E81FD0 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
-		26DFB75020D12BE300E81FD0 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		26DFB75020D12BE300E81FD0 /* ChatTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextTableViewCell.swift; sourceTree = "<group>"; };
 		26DFB75120D12BE300E81FD0 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		26DFB75220D12BE300E81FD0 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		26DFB75C20D1AC2600E81FD0 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -81,6 +83,8 @@
 		26DFB78320D3164300E81FD0 /* ConversationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewModel.swift; sourceTree = "<group>"; };
 		26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		26DFB78820D3916F00E81FD0 /* DataCoderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoderController.swift; sourceTree = "<group>"; };
+		26DFB78A20D4217100E81FD0 /* ChatVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVideoTableViewCell.swift; sourceTree = "<group>"; };
+		26DFB78C20D4371D00E81FD0 /* FileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				260FB75120D1028700376BDD /* WebSocketController.swift */,
+				26DFB78C20D4371D00E81FD0 /* FileController.swift */,
 				26DFB76E20D28A1200E81FD0 /* DateTimeController.swift */,
 				26DFB77320D2AB7D00E81FD0 /* MessageController.swift */,
 				26DFB78820D3916F00E81FD0 /* DataCoderController.swift */,
@@ -208,7 +213,8 @@
 		26DFB74F20D12BE300E81FD0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				26DFB75020D12BE300E81FD0 /* ChatTableViewCell.swift */,
+				26DFB75020D12BE300E81FD0 /* ChatTextTableViewCell.swift */,
+				26DFB78A20D4217100E81FD0 /* ChatVideoTableViewCell.swift */,
 				26DFB75120D12BE300E81FD0 /* BubbleView.swift */,
 				26DFB75220D12BE300E81FD0 /* AvatarView.swift */,
 			);
@@ -411,12 +417,13 @@
 				26DFB77F20D2AC6C00E81FD0 /* InMemoryStorage.swift in Sources */,
 				26DFB78220D3161D00E81FD0 /* ConversationViewController.swift in Sources */,
 				26DFB76F20D28A1200E81FD0 /* DateTimeController.swift in Sources */,
+				26DFB78D20D4371D00E81FD0 /* FileController.swift in Sources */,
 				26DFB75420D12BE300E81FD0 /* BubbleView.swift in Sources */,
 				26DFB75520D12BE300E81FD0 /* AvatarView.swift in Sources */,
 				26DFB77420D2AB7D00E81FD0 /* MessageController.swift in Sources */,
 				26DFB75D20D1AC2600E81FD0 /* Message.swift in Sources */,
 				260FB75220D1028700376BDD /* WebSocketController.swift in Sources */,
-				26DFB75320D12BE300E81FD0 /* ChatTableViewCell.swift in Sources */,
+				26DFB75320D12BE300E81FD0 /* ChatTextTableViewCell.swift in Sources */,
 				26DFB76120D1BFB500E81FD0 /* ChatViewController.swift in Sources */,
 				26DFB78720D3246A00E81FD0 /* UIViewController+Alerts.swift in Sources */,
 				26DFB78920D3916F00E81FD0 /* DataCoderController.swift in Sources */,
@@ -424,6 +431,7 @@
 				26DFB78420D3164300E81FD0 /* ConversationViewModel.swift in Sources */,
 				260FB70120D0442000376BDD /* AppDelegate.swift in Sources */,
 				26DFB77B20D2ABFD00E81FD0 /* UIColor+Additions.swift in Sources */,
+				26DFB78B20D4217100E81FD0 /* ChatVideoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

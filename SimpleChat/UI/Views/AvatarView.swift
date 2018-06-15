@@ -43,7 +43,7 @@ class AvatarView: UIView {
         stringLayer()
     }
 
-    func backgroundLayer() {
+    fileprivate func backgroundLayer() {
 
         layer.sublayers?.removeAll()
         var backgroundLayer: CAShapeLayer
@@ -58,7 +58,7 @@ class AvatarView: UIView {
         backgroundLayer.frame = layer.bounds
     }
 
-    func stringLayer() {
+    fileprivate func stringLayer() {
 
         let textLayer = CATextLayer()
         textLayer.string = letterString

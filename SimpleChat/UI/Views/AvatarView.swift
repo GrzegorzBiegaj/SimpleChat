@@ -8,13 +8,6 @@
 
 import UIKit
 
-struct Avatar {
-
-    let character: Character
-    let backgroundColor: UIColor
-    let fontColor: UIColor
-}
-
 @IBDesignable
 class AvatarView: UIView {
 

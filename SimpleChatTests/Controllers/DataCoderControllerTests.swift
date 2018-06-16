@@ -51,7 +51,7 @@ class DataCoderControllerTests: XCTestCase {
         let dataCoderController = DataCoderController()
         let input = Data(bytes: [1, 2, 3, 4, 5])
         let encodedData = dataCoderController.encode(data: input)
-        dataCoderController.outputClosure = { data in
+        dataCoderController.receivedDataClosure = { data in
             XCTAssertEqual(input.count, data.count)
             XCTAssertEqual(input, data)
             expectation.fulfill()
@@ -65,7 +65,7 @@ class DataCoderControllerTests: XCTestCase {
         let dataCoderController = DataCoderController()
         let input = randomDataGenerator(count: 300000)
         let encodedData = dataCoderController.encode(data: input)
-        dataCoderController.outputClosure = { data in
+        dataCoderController.receivedDataClosure = { data in
             XCTAssertEqual(input.count, data.count)
             XCTAssertEqual(input, data)
             expectation.fulfill()

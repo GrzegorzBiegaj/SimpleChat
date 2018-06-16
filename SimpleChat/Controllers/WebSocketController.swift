@@ -32,7 +32,12 @@ class WebSocketController {
         self.webSocket = WebSocket("ws://echo.websocket.org")
         self.webSocket.delegate = self
         self.webSocket.binaryType = .nsData
-        self.coderController.delegate = self
+        self.coderController.receivedDataClosure = { [unowned self] data in
+            print ("Received video size: \(data.count)")
+            DispatchQueue.main.async {
+                self.delegate?.didReceiveData(data: data)
+            }
+        }
     }
 
     func sendText(text: String) -> Bool {
@@ -122,17 +127,6 @@ extension WebSocketController: WebSocketDelegate {
     func webSocketMessageData(_ data: Data) {
         DispatchQueue.global(qos: .utility).async {
             self.coderController.decode(data: data)
-        }
-    }
-
-}
-
-extension WebSocketController: DataCoderDelegateProtocol {
-
-    func receivedData(data: Data) {
-        print ("Received video size: \(data.count)")
-        DispatchQueue.main.async {
-            self.delegate?.didReceiveData(data: data)
         }
     }
 

@@ -57,11 +57,11 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.chats.chats.count
+        return viewModel.chats.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = viewModel.chats.chats[indexPath.row]
+        let message = viewModel.chats[indexPath.row]
 
         var cellName: String
         let cell: UITableViewCell

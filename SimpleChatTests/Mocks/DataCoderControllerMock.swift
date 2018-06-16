@@ -16,10 +16,8 @@ class DataCoderControllerMock: DataCoderControllerProtocol {
     }
 
     func decode(data: Data) {
-        outputClosure?(data)
+        receivedDataClosure?(data)
     }
 
-    var delegate: DataCoderDelegateProtocol?
-
-    var outputClosure: ((Data) -> Void)?
+    var receivedDataClosure: ((Data) -> Void)?
 }

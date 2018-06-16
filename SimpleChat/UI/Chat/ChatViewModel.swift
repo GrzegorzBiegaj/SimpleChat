@@ -8,21 +8,12 @@
 
 import Foundation
 
-struct ChatVM {
-    let chats: [MessageVM]
-
-    init (messages: [Message]) {
-        chats = messages.map { MessageVM(message: $0) }
-    }
-}
-
 struct MessageVM {
-
-    let dateTimeController: DateTimeControllerProtocol
-
     let message: Message
     let avatar: Avatar
     let time: String
+
+    let dateTimeController: DateTimeControllerProtocol
 
     init(message: Message, dateTimeController: DateTimeControllerProtocol = DateTimeController()) {
         self.dateTimeController = dateTimeController
@@ -45,13 +36,13 @@ class ChatViewModel {
     }
 
     // MARK: - Public interface
-    
-    var chats: ChatVM {
-        return ChatVM(messages: messageController.messages.items)
+
+    var chats: [MessageVM] {
+        return messageController.messages.items.map { MessageVM(message: $0) }
     }
 
     var isChatEmpty: Bool {
-        return chats.chats.count == 0
+        return chats.count == 0
     }
 
 }

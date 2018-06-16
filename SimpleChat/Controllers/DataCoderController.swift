@@ -12,8 +12,7 @@ protocol DataCoderControllerProtocol {
 
     func encode(data: Data) -> [Data]
     func decode(data: Data)
-    var delegate: DataCoderDelegateProtocol? { get set }
-    var outputClosure: ((Data) -> Void)? { get set }
+    var receivedDataClosure: ((Data) -> Void)? { get set }
 }
 
 protocol DataCoderDelegateProtocol: class {
@@ -37,7 +36,7 @@ class DataCoderController: DataCoderControllerProtocol {
     fileprivate let chunkLen = 130000
 
     weak var delegate: DataCoderDelegateProtocol?
-    var outputClosure: ((Data) -> Void)?
+    var receivedDataClosure: ((Data) -> Void)?
 
     // MARK: - Public interface
 
@@ -51,8 +50,7 @@ class DataCoderController: DataCoderControllerProtocol {
         addChunk(data: data)
         if isDataCompleted && !isOutputError {
             let data = joinChanks(data: outputChunks)
-            outputClosure?(data)
-            delegate?.receivedData(data: data)
+            receivedDataClosure?(data)
             outputChunks = []
             isDataCompleted = false
             numberOfChunks = 0

@@ -9,13 +9,23 @@
 /* Begin PBXBuildFile section */
 		260FB70120D0442000376BDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB70020D0442000376BDD /* AppDelegate.swift */; };
 		260FB70B20D0442600376BDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 260FB70920D0442600376BDD /* LaunchScreen.storyboard */; };
-		260FB71620D0442600376BDD /* SimpleChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB71520D0442600376BDD /* SimpleChatTests.swift */; };
 		260FB72120D0442600376BDD /* SimpleChatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB72020D0442600376BDD /* SimpleChatUITests.swift */; };
 		260FB74720D0F9FB00376BDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 260FB74620D0F9FB00376BDD /* .gitignore */; };
 		260FB74920D0FA0100376BDD /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 260FB74820D0FA0100376BDD /* Cartfile */; };
 		260FB74D20D0FB3D00376BDD /* SwiftWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */; };
 		260FB75220D1028700376BDD /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB75120D1028700376BDD /* WebSocketController.swift */; };
 		261F5A2B20D4FD6300F08E89 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A2A20D4FD6300F08E89 /* UIColor+Additions.swift */; };
+		261F5A3020D51D4500F08E89 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A2F20D51D4500F08E89 /* Entry.swift */; };
+		261F5A3720D5235600F08E89 /* DataCoderControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A3420D5235600F08E89 /* DataCoderControllerTests.swift */; };
+		261F5A3820D5235600F08E89 /* MessageControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A3520D5235600F08E89 /* MessageControllerTests.swift */; };
+		261F5A3920D5235600F08E89 /* DateTimeControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A3620D5235600F08E89 /* DateTimeControllerTests.swift */; };
+		261F5A4020D53E0B00F08E89 /* FileControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A3F20D53E0B00F08E89 /* FileControllerMock.swift */; };
+		261F5A4220D53E5B00F08E89 /* DateTimeControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A4120D53E5B00F08E89 /* DateTimeControllerMock.swift */; };
+		261F5A4420D53EA300F08E89 /* MessageControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A4320D53EA300F08E89 /* MessageControllerMock.swift */; };
+		261F5A4620D53FDD00F08E89 /* DataCoderControllerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A4520D53FDD00F08E89 /* DataCoderControllerMock.swift */; };
+		261F5A4920D5416A00F08E89 /* ChatViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A4820D5416A00F08E89 /* ChatViewModelTests.swift */; };
+		261F5A4C20D54B7B00F08E89 /* EntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A4B20D54B7B00F08E89 /* EntryTests.swift */; };
+		261F5A4E20D54B9500F08E89 /* MessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A4D20D54B9500F08E89 /* MessageTests.swift */; };
 		26DFB74720D1282B00E81FD0 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DFB74620D1282B00E81FD0 /* Chat.storyboard */; };
 		26DFB75320D12BE300E81FD0 /* ChatTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75020D12BE300E81FD0 /* ChatTextTableViewCell.swift */; };
 		26DFB75420D12BE300E81FD0 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75120D12BE300E81FD0 /* BubbleView.swift */; };
@@ -58,7 +68,6 @@
 		260FB70A20D0442600376BDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		260FB70C20D0442600376BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		260FB71120D0442600376BDD /* SimpleChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		260FB71520D0442600376BDD /* SimpleChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleChatTests.swift; sourceTree = "<group>"; };
 		260FB71720D0442600376BDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		260FB71C20D0442600376BDD /* SimpleChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		260FB72020D0442600376BDD /* SimpleChatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleChatUITests.swift; sourceTree = "<group>"; };
@@ -68,6 +77,17 @@
 		260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftWebSocket.framework; path = Carthage/Build/iOS/SwiftWebSocket.framework; sourceTree = "<group>"; };
 		260FB75120D1028700376BDD /* WebSocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
 		261F5A2A20D4FD6300F08E89 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		261F5A2F20D51D4500F08E89 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		261F5A3420D5235600F08E89 /* DataCoderControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCoderControllerTests.swift; sourceTree = "<group>"; };
+		261F5A3520D5235600F08E89 /* MessageControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageControllerTests.swift; sourceTree = "<group>"; };
+		261F5A3620D5235600F08E89 /* DateTimeControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeControllerTests.swift; sourceTree = "<group>"; };
+		261F5A3F20D53E0B00F08E89 /* FileControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileControllerMock.swift; sourceTree = "<group>"; };
+		261F5A4120D53E5B00F08E89 /* DateTimeControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeControllerMock.swift; sourceTree = "<group>"; };
+		261F5A4320D53EA300F08E89 /* MessageControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageControllerMock.swift; sourceTree = "<group>"; };
+		261F5A4520D53FDD00F08E89 /* DataCoderControllerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoderControllerMock.swift; sourceTree = "<group>"; };
+		261F5A4820D5416A00F08E89 /* ChatViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModelTests.swift; sourceTree = "<group>"; };
+		261F5A4B20D54B7B00F08E89 /* EntryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryTests.swift; sourceTree = "<group>"; };
+		261F5A4D20D54B9500F08E89 /* MessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTests.swift; sourceTree = "<group>"; };
 		26DFB74620D1282B00E81FD0 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		26DFB75020D12BE300E81FD0 /* ChatTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextTableViewCell.swift; sourceTree = "<group>"; };
 		26DFB75120D12BE300E81FD0 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
@@ -155,7 +175,10 @@
 		260FB71420D0442600376BDD /* SimpleChatTests */ = {
 			isa = PBXGroup;
 			children = (
-				260FB71520D0442600376BDD /* SimpleChatTests.swift */,
+				261F5A3A20D5236E00F08E89 /* Mocks */,
+				261F5A4720D5415800F08E89 /* ViewModels */,
+				261F5A3320D5235600F08E89 /* Controllers */,
+				261F5A4A20D54B5A00F08E89 /* Models */,
 				260FB71720D0442600376BDD /* Info.plist */,
 			);
 			path = SimpleChatTests;
@@ -200,6 +223,44 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		261F5A3320D5235600F08E89 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				261F5A3620D5235600F08E89 /* DateTimeControllerTests.swift */,
+				261F5A3520D5235600F08E89 /* MessageControllerTests.swift */,
+				261F5A3420D5235600F08E89 /* DataCoderControllerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		261F5A3A20D5236E00F08E89 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				261F5A3F20D53E0B00F08E89 /* FileControllerMock.swift */,
+				261F5A4120D53E5B00F08E89 /* DateTimeControllerMock.swift */,
+				261F5A4320D53EA300F08E89 /* MessageControllerMock.swift */,
+				261F5A4520D53FDD00F08E89 /* DataCoderControllerMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		261F5A4720D5415800F08E89 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				261F5A4820D5416A00F08E89 /* ChatViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		261F5A4A20D54B5A00F08E89 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				261F5A4B20D54B7B00F08E89 /* EntryTests.swift */,
+				261F5A4D20D54B9500F08E89 /* MessageTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		26DFB74520D127F300E81FD0 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +285,7 @@
 		26DFB75B20D1ABA600E81FD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				261F5A2F20D51D4500F08E89 /* Entry.swift */,
 				26DFB75C20D1AC2600E81FD0 /* Message.swift */,
 			);
 			path = Models;
@@ -417,6 +479,7 @@
 				26DFB77F20D2AC6C00E81FD0 /* InMemoryStorage.swift in Sources */,
 				26DFB78220D3161D00E81FD0 /* ConversationViewController.swift in Sources */,
 				26DFB76F20D28A1200E81FD0 /* DateTimeController.swift in Sources */,
+				261F5A3020D51D4500F08E89 /* Entry.swift in Sources */,
 				26DFB78D20D4371D00E81FD0 /* FileController.swift in Sources */,
 				26DFB75420D12BE300E81FD0 /* BubbleView.swift in Sources */,
 				26DFB75520D12BE300E81FD0 /* AvatarView.swift in Sources */,
@@ -439,7 +502,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				260FB71620D0442600376BDD /* SimpleChatTests.swift in Sources */,
+				261F5A3720D5235600F08E89 /* DataCoderControllerTests.swift in Sources */,
+				261F5A4020D53E0B00F08E89 /* FileControllerMock.swift in Sources */,
+				261F5A4920D5416A00F08E89 /* ChatViewModelTests.swift in Sources */,
+				261F5A3920D5235600F08E89 /* DateTimeControllerTests.swift in Sources */,
+				261F5A3820D5235600F08E89 /* MessageControllerTests.swift in Sources */,
+				261F5A4220D53E5B00F08E89 /* DateTimeControllerMock.swift in Sources */,
+				261F5A4620D53FDD00F08E89 /* DataCoderControllerMock.swift in Sources */,
+				261F5A4420D53EA300F08E89 /* MessageControllerMock.swift in Sources */,
+				261F5A4C20D54B7B00F08E89 /* EntryTests.swift in Sources */,
+				261F5A4E20D54B9500F08E89 /* MessageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

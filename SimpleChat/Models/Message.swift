@@ -8,20 +8,19 @@
 
 import Foundation
 
-enum Side {
-    case sent
-    case received
-}
-
-enum Entry {
-    case text(String)
-    case movie(URL)
-}
-
 struct Message {
     let entry: Entry
     let side: Side
     let timeStamp: Date
+}
+
+extension Message: Equatable {
+    
+    static func == (lhs: Message, rhs: Message) -> Bool {
+        return lhs.entry == rhs.entry
+            && lhs.side == rhs.side
+            && lhs.timeStamp == rhs.timeStamp
+    }
 }
 
 struct Messages {

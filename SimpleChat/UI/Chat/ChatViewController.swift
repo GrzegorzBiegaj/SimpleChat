@@ -73,7 +73,7 @@ extension ChatViewController: UITableViewDataSource {
             if let cell = cell as? ChatTextTableViewCell {
                 cell.message = message
             }
-        case .movie:
+        case .video:
             cellName = message.message.side == .received ? leftVideoCellName : rightVideoCellName
             cell = tableView.dequeueReusableCell(withIdentifier: cellName, for: indexPath)
             if let cell = cell as? ChatVideoTableViewCell {

@@ -42,11 +42,12 @@ class ConversationViewController: UIViewController {
     @IBAction func onSendButtonTap(_ sender: UIButton) {
         guard let text = messageEditorTextField.text else { return }
 
-        webSocketController.sendText(text: text)
-        viewModel.addSentText(text: text)
-        messageEditorTextField.text?.removeAll()
-        messageTextFieldChanged()
-        chatViewController?.reloadData()
+        if webSocketController.sendText(text: text) == true {
+            viewModel.addSentText(text: text)
+            messageEditorTextField.text?.removeAll()
+            messageTextFieldChanged()
+            chatViewController?.reloadData()
+        }
     }
 
     @IBAction func onVideoButtonTap(_ sender: UIButton) {
@@ -157,9 +158,10 @@ extension ConversationViewController: UIImagePickerControllerDelegate, UINavigat
 
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         guard let url = info[UIImagePickerControllerMediaURL] as? URL else { return }
-        viewModel.addSentVideo(url: url)
-        chatViewController?.reloadData()
-        webSocketController.sendData(url: url)
+        if webSocketController.sendData(url: url) == true {
+            viewModel.addSentVideo(url: url)
+            chatViewController?.reloadData()
+        }
         self.dismiss(animated: true, completion: nil)
     }
 

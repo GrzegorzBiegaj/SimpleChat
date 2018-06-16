@@ -35,22 +35,37 @@ class WebSocketController {
         self.coderController.delegate = self
     }
 
-    func sendText(text: String) {
-        print("Input text message: \(text)")
-        webSocket.send(text)
-    }
-
-    func sendData(url: URL) {
-        do {
-            let data = try Data(contentsOf: url)
-            self.sendDataChunks(data: data)
-        } catch {
-            // data reading error from url
+    func sendText(text: String) -> Bool {
+        if isOpened {
+            print("Send text message: \(text)")
+            webSocket.send(text)
+        } else {
+            print("SendText error - connection is not opened")
         }
+        return isOpened
     }
 
-    func sendData(data: Data) {
-        sendDataChunks(data: data)
+    func sendData(url: URL) -> Bool {
+        if isOpened {
+            do {
+                let data = try Data(contentsOf: url)
+                self.sendDataChunks(data: data)
+            } catch {
+                // data reading error from url
+            }
+        } else {
+            print("SendData error - connection is not opened")
+        }
+        return isOpened
+    }
+
+    func sendData(data: Data) -> Bool {
+        if isOpened {
+            sendDataChunks(data: data)
+        } else {
+            print("SendData error - connection is not opened")
+        }
+        return isOpened
     }
 
     func open() {
@@ -62,13 +77,20 @@ class WebSocketController {
     // MARK: - Private
 
     fileprivate func sendDataChunks(data: Data) {
-        print ("Input video size: \(data.count)")
+        print ("Send video size: \(data.count)")
         DispatchQueue.global(qos: .utility).async {
             let dataChunks = self.coderController.encode(data: data)
             for dataChunk in dataChunks {
                 self.webSocket.send(dataChunk)
             }
         }
+    }
+
+    var isOpened: Bool {
+        if case .open = webSocket.readyState {
+            return true
+        }
+        return false
     }
 
 }
@@ -108,7 +130,7 @@ extension WebSocketController: WebSocketDelegate {
 extension WebSocketController: DataCoderDelegateProtocol {
 
     func receivedData(data: Data) {
-        print ("Output video size: \(data.count)")
+        print ("Received video size: \(data.count)")
         DispatchQueue.main.async {
             self.delegate?.didReceiveData(data: data)
         }

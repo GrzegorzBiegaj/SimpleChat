@@ -34,7 +34,7 @@ class ChatVideoTableViewCell: UITableViewCell {
     var message: MessageVM? {
 
         didSet {
-            guard let message = message, case .movie(let url) = message.message.entry else { return }
+            guard let message = message, case .video(let url) = message.message.entry else { return }
 
             avatarView.avatar = message.avatar
             timestampLabel.textColor = .black

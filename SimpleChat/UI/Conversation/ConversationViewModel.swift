@@ -37,11 +37,11 @@ class ConversationViewModel {
     }
 
     func addSentVideo(url: URL) {
-        addMessage(message: Message(entry: .movie(url), side: .sent, timeStamp: Date()))
+        addMessage(message: Message(entry: .video(url), side: .sent, timeStamp: Date()))
     }
 
     func addReceivedVideo(url: URL) {
-        addMessage(message: Message(entry: .movie(url), side: .received, timeStamp: Date()))
+        addMessage(message: Message(entry: .video(url), side: .received, timeStamp: Date()))
     }
 
     func removeAll() {

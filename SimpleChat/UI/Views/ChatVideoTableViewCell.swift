@@ -42,7 +42,7 @@ class ChatVideoTableViewCell: UITableViewCell {
             backgroundColor = .silverGrey
             self.url = url
 
-            DispatchQueue.global().async {
+            DispatchQueue.global().async { [weak self] in
                 let asset = AVAsset(url: url)
                 let assetImgGenerate = AVAssetImageGenerator(asset: asset)
                 assetImgGenerate.appliesPreferredTrackTransform = true
@@ -50,9 +50,11 @@ class ChatVideoTableViewCell: UITableViewCell {
                 let img = try? assetImgGenerate.copyCGImage(at: time, actualTime: nil)
                 guard let newImage = img else { return }
                 let frameImg = UIImage(cgImage: newImage)
-                guard self.url == url else { return }
-                DispatchQueue.main.async(execute: {
-                    self.videoImageView.image = frameImg
+
+                // Prevent update thumbnail to the other instance
+                guard self?.url == url else { return }
+                DispatchQueue.main.async(execute: { [weak self] in
+                    self?.videoImageView.image = frameImg
                 })
             }
         }

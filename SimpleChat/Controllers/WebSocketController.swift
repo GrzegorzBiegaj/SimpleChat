@@ -34,7 +34,7 @@ class WebSocketController {
         self.webSocket.binaryType = .nsData
         self.coderController.receivedDataClosure = { [unowned self] data in
             print ("Received video size: \(data.count)")
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [unowned self] in
                 self.delegate?.didReceiveData(data: data)
             }
         }
@@ -56,7 +56,7 @@ class WebSocketController {
                 let data = try Data(contentsOf: url)
                 self.sendDataChunks(data: data)
             } catch {
-                // data reading error from url
+                print("SendData error - wrong file path")
             }
         } else {
             print("SendData error - connection is not opened")
@@ -83,7 +83,7 @@ class WebSocketController {
 
     fileprivate func sendDataChunks(data: Data) {
         print ("Send video size: \(data.count)")
-        DispatchQueue.global(qos: .utility).async {
+        DispatchQueue.global(qos: .utility).async { [unowned self] in
             let dataChunks = self.coderController.encode(data: data)
             for dataChunk in dataChunks {
                 self.webSocket.send(dataChunk)
@@ -125,7 +125,7 @@ extension WebSocketController: WebSocketDelegate {
     }
 
     func webSocketMessageData(_ data: Data) {
-        DispatchQueue.global(qos: .utility).async {
+        DispatchQueue.global(qos: .utility).async { [unowned self] in
             self.coderController.decode(data: data)
         }
     }

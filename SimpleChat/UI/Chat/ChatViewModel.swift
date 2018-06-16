@@ -9,7 +9,6 @@
 import Foundation
 
 struct ChatVM {
-
     let chats: [MessageVM]
 
     init (messages: [Message]) {
@@ -19,13 +18,14 @@ struct ChatVM {
 
 struct MessageVM {
 
+    let dateTimeController: DateTimeControllerProtocol
+
     let message: Message
     let avatar: Avatar
     let time: String
 
-    init(message: Message) {
-
-        let dateTimeController = DateTimeController()
+    init(message: Message, dateTimeController: DateTimeControllerProtocol = DateTimeController()) {
+        self.dateTimeController = dateTimeController
 
         self.message = message
         if case .received = message.side {
@@ -38,12 +38,13 @@ struct MessageVM {
 }
 
 class ChatViewModel {
-
     let messageController: MessageControllerProtocol
 
     init(messageController: MessageControllerProtocol = MessageController()) {
         self.messageController = messageController
     }
+
+    // MARK: - Public interface
     
     var chats: ChatVM {
         return ChatVM(messages: messageController.messages.items)

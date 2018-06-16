@@ -11,9 +11,13 @@ import UIKit
 class ConversationViewModel {
 
     let messageController: MessageControllerProtocol
+    let fileController: FileControllerProtocol
 
-    init(messageController: MessageControllerProtocol = MessageController()) {
+    init(messageController: MessageControllerProtocol = MessageController(),
+         fileController: FileControllerProtocol = FileController()) {
+
         self.messageController = messageController
+        self.fileController = fileController
     }
 
     // MARK: - Public interface
@@ -62,6 +66,10 @@ class ConversationViewModel {
         return KeyboardResult(isShown: keyboardRect.origin.y - viewRect.height == 0,
                               hight: keyboardRect.height,
                               animateDuration: animateDuration)
+    }
+
+    func saveMovie(data: Data) -> URL? {
+        return fileController.saveMovie(data: data)
     }
 
     // MARK: - Private

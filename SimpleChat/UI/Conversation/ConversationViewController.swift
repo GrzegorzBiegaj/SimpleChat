@@ -18,7 +18,6 @@ class ConversationViewController: UIViewController {
     let viewModel = ConversationViewModel()
     let chatViewModel = ChatViewModel()
     let webSocketController = WebSocketController()
-    let fileController = FileController()
 
     lazy var videoPicker = UIImagePickerController()
     
@@ -145,7 +144,7 @@ extension ConversationViewController: WebSocketControllerDelegate {
     }
 
     func didReceiveData(data: Data) {
-        guard let url = fileController.saveMovie(data: data) else { return }
+        guard let url = viewModel.saveMovie(data: data) else { return }
         viewModel.addReceivedVideo(url: url)
         chatViewController?.reloadData()
     }

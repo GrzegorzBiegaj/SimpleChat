@@ -11,8 +11,10 @@ import UIKit
 @IBDesignable
 class BubbleView: UIView {
 
-    private let leftInsets = UIEdgeInsets(top: 15 , left: 22, bottom: 15, right: 15)
-    private let rightInsets = UIEdgeInsets(top: 15 , left: 15, bottom: 15, right: 22)
+    fileprivate let leftInsets = UIEdgeInsets(top: 15 , left: 22, bottom: 15, right: 15)
+    fileprivate let rightInsets = UIEdgeInsets(top: 15 , left: 15, bottom: 15, right: 22)
+
+    // MARK: - Properties
 
     @IBInspectable var image: UIImage?
 

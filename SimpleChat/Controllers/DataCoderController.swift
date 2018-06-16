@@ -22,8 +22,18 @@ protocol DataCoderDelegateProtocol: class {
 
 class DataCoderController: DataCoderControllerProtocol {
 
-    fileprivate let chunkLen = 130000
+    // Header structure:
+    // 0 byte - 11
+    // 1 byte - 22
+    // 2 byte - 33
+    // 3 byte - chunk number high
+    // 4 byte - chunk number Low
+    // 5 byte - chunk count high
+    // 6 byte - chunk count low
     fileprivate var header: [UInt8] = [11, 22, 33, 0, 0, 0, 0]
+
+    // Depeneds on the server size
+    fileprivate let chunkLen = 130000
 
     weak var delegate: DataCoderDelegateProtocol?
 
@@ -34,7 +44,7 @@ class DataCoderController: DataCoderControllerProtocol {
         return addHeaders(data: data)
     }
 
-    // data is returned as a DataCoderDelegateProtocol delegate
+    // Data is returned as a DataCoderDelegateProtocol delegate
     func decode(data: Data) {
         addChunk(data: data)
         if isDataCompleted && !isOutputError {

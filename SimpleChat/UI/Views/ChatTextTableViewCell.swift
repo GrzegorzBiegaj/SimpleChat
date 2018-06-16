@@ -16,6 +16,8 @@ class ChatTextTableViewCell: UITableViewCell {
     @IBOutlet weak var bubbleView: BubbleView!
     @IBOutlet weak var timestampLabel: UILabel!
 
+    // MARK: - Properties
+    
     var message: MessageVM? {
 
         didSet {

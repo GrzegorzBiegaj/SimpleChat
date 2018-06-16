@@ -18,12 +18,14 @@ struct Avatar {
 @IBDesignable
 class AvatarView: UIView {
 
+    // MARK: - properties
+
     @IBInspectable var letterString: String?
     @IBInspectable var letterBackgroundColor: UIColor?
     @IBInspectable var letterColor: UIColor?
 
-    private var font = UIFont.systemFont(ofSize: 20)
-    private var imageFrameSize: CGFloat = 2.0
+    fileprivate var font = UIFont.systemFont(ofSize: 20)
+    fileprivate var imageFrameSize: CGFloat = 2.0
 
     var avatar: Avatar? {
 

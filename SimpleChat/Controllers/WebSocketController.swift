@@ -36,17 +36,16 @@ class WebSocketController {
     }
 
     func sendText(text: String) {
+        print("Input text message: \(text)")
         webSocket.send(text)
     }
 
     func sendData(url: URL) {
-        DispatchQueue.global(qos: .utility).async {
-            do {
-                let data = try Data(contentsOf: url)
-                self.sendDataChunks(data: data)
-            } catch {
-                // data reading error from url
-            }
+        do {
+            let data = try Data(contentsOf: url)
+            self.sendDataChunks(data: data)
+        } catch {
+            // data reading error from url
         }
     }
 
@@ -77,23 +76,24 @@ class WebSocketController {
 extension WebSocketController: WebSocketDelegate {
 
     func webSocketOpen() {
-        print("webSocketOpen")
+        print("WebSocketOpen")
         delegate?.didOpen()
     }
 
     func webSocketClose(_ code: Int, reason: String, wasClean: Bool) {
-        print("webSocketClose: code: \(code), reason: \(reason), wasClean: \(wasClean)")
+        print("WebSocketClose: code: \(code), reason: \(reason), wasClean: \(wasClean)")
         delegate?.didClose()
         open()
     }
 
     func webSocketError(_ error: NSError) {
-        print("webSocketError: \(error)")
+        print("WebSocketError: \(error)")
         delegate?.didReceiveError(error: error)
         open()
     }
 
     func webSocketMessageText(_ text: String) {
+        print("Received text message: \(text)")
         delegate?.didReceiveString(text: text)
     }
 
@@ -113,6 +113,5 @@ extension WebSocketController: DataCoderDelegateProtocol {
             self.delegate?.didReceiveData(data: data)
         }
     }
-
 
 }

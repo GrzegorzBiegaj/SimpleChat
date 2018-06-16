@@ -28,6 +28,8 @@ class ChatVideoTableViewCell: UITableViewCell {
 
     weak var delegate: ChatVideoTableViewCellProtocol?
 
+    // MARK: - Properties
+
     private(set) var url: URL?
     var message: MessageVM? {
 
@@ -48,8 +50,8 @@ class ChatVideoTableViewCell: UITableViewCell {
                 let img = try? assetImgGenerate.copyCGImage(at: time, actualTime: nil)
                 guard let newImage = img else { return }
                 let frameImg = UIImage(cgImage: newImage)
+                guard self.url == url else { return }
                 DispatchQueue.main.async(execute: {
-                    guard self.url == url else { return }
                     self.videoImageView.image = frameImg
                 })
             }

@@ -15,6 +15,7 @@
 		260FB74920D0FA0100376BDD /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 260FB74820D0FA0100376BDD /* Cartfile */; };
 		260FB74D20D0FB3D00376BDD /* SwiftWebSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */; };
 		260FB75220D1028700376BDD /* WebSocketController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260FB75120D1028700376BDD /* WebSocketController.swift */; };
+		261F5A2B20D4FD6300F08E89 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F5A2A20D4FD6300F08E89 /* UIColor+Additions.swift */; };
 		26DFB74720D1282B00E81FD0 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26DFB74620D1282B00E81FD0 /* Chat.storyboard */; };
 		26DFB75320D12BE300E81FD0 /* ChatTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75020D12BE300E81FD0 /* ChatTextTableViewCell.swift */; };
 		26DFB75420D12BE300E81FD0 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB75120D12BE300E81FD0 /* BubbleView.swift */; };
@@ -24,7 +25,6 @@
 		26DFB76D20D27EAD00E81FD0 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB76C20D27EAD00E81FD0 /* ChatViewModel.swift */; };
 		26DFB76F20D28A1200E81FD0 /* DateTimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB76E20D28A1200E81FD0 /* DateTimeController.swift */; };
 		26DFB77420D2AB7D00E81FD0 /* MessageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB77320D2AB7D00E81FD0 /* MessageController.swift */; };
-		26DFB77B20D2ABFD00E81FD0 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB77920D2ABFC00E81FD0 /* UIColor+Additions.swift */; };
 		26DFB77C20D2ABFD00E81FD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26DFB77A20D2ABFC00E81FD0 /* Assets.xcassets */; };
 		26DFB77F20D2AC6C00E81FD0 /* InMemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB77E20D2AC6C00E81FD0 /* InMemoryStorage.swift */; };
 		26DFB78220D3161D00E81FD0 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DFB78120D3161D00E81FD0 /* ConversationViewController.swift */; };
@@ -67,6 +67,7 @@
 		260FB74820D0FA0100376BDD /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		260FB74C20D0FB3D00376BDD /* SwiftWebSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftWebSocket.framework; path = Carthage/Build/iOS/SwiftWebSocket.framework; sourceTree = "<group>"; };
 		260FB75120D1028700376BDD /* WebSocketController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocketController.swift; sourceTree = "<group>"; };
+		261F5A2A20D4FD6300F08E89 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		26DFB74620D1282B00E81FD0 /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		26DFB75020D12BE300E81FD0 /* ChatTextTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTextTableViewCell.swift; sourceTree = "<group>"; };
 		26DFB75120D12BE300E81FD0 /* BubbleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		26DFB76C20D27EAD00E81FD0 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		26DFB76E20D28A1200E81FD0 /* DateTimeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeController.swift; sourceTree = "<group>"; };
 		26DFB77320D2AB7D00E81FD0 /* MessageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageController.swift; sourceTree = "<group>"; };
-		26DFB77920D2ABFC00E81FD0 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		26DFB77A20D2ABFC00E81FD0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		26DFB77E20D2AC6C00E81FD0 /* InMemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InMemoryStorage.swift; sourceTree = "<group>"; };
 		26DFB78120D3161D00E81FD0 /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 		26DFB77820D2ABFC00E81FD0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				26DFB77920D2ABFC00E81FD0 /* UIColor+Additions.swift */,
 				26DFB77A20D2ABFC00E81FD0 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -259,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				26DFB78620D3246A00E81FD0 /* UIViewController+Alerts.swift */,
+				261F5A2A20D4FD6300F08E89 /* UIColor+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,8 +430,8 @@
 				26DFB76D20D27EAD00E81FD0 /* ChatViewModel.swift in Sources */,
 				26DFB78420D3164300E81FD0 /* ConversationViewModel.swift in Sources */,
 				260FB70120D0442000376BDD /* AppDelegate.swift in Sources */,
-				26DFB77B20D2ABFD00E81FD0 /* UIColor+Additions.swift in Sources */,
 				26DFB78B20D4217100E81FD0 /* ChatVideoTableViewCell.swift in Sources */,
+				261F5A2B20D4FD6300F08E89 /* UIColor+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

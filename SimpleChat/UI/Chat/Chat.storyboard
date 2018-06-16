@@ -124,26 +124,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="redraw" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="2cq-ju-bWO" userLabel="bubbleView" customClass="BubbleView" customModule="SimpleChat">
-                                                    <rect key="frame" x="72" y="23" width="232" height="37.5"/>
+                                                    <rect key="frame" x="60" y="23" width="250" height="37.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="bubble_nine_white"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@ChatMessage" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3y2-xO-dTW" userLabel="chatLabel">
-                                                    <rect key="frame" x="97" y="33" width="197" height="17.5"/>
+                                                    <rect key="frame" x="85" y="33" width="215" height="17.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.36078431370000003" green="0.38431372549999998" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="@TimeStamp" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzu-eb-djE" userLabel="timestamp">
-                                                    <rect key="frame" x="97" y="65.5" width="207" height="14.5"/>
+                                                    <rect key="frame" x="85" y="65.5" width="225" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAt-E1-cMM" customClass="AvatarView" customModule="SimpleChat">
-                                                    <rect key="frame" x="27" y="23" width="40" height="40"/>
+                                                    <rect key="frame" x="15" y="23" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="Qwv-U9-hA7"/>
                                                         <constraint firstAttribute="height" constant="40" id="vmK-RI-akf"/>
@@ -164,8 +164,8 @@
                                                 <constraint firstItem="PAt-E1-cMM" firstAttribute="top" secondItem="i2c-Va-Uw4" secondAttribute="topMargin" constant="12" id="H5J-lQ-DEu"/>
                                                 <constraint firstItem="2cq-ju-bWO" firstAttribute="top" secondItem="3y2-xO-dTW" secondAttribute="top" constant="-10" id="HUC-b7-UsJ"/>
                                                 <constraint firstItem="Vzu-eb-djE" firstAttribute="trailing" secondItem="2cq-ju-bWO" secondAttribute="trailing" id="Kcd-dO-din"/>
-                                                <constraint firstItem="PAt-E1-cMM" firstAttribute="leading" secondItem="i2c-Va-Uw4" secondAttribute="leadingMargin" constant="12" id="RPx-pK-Pyo"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="3y2-xO-dTW" secondAttribute="trailing" constant="66" id="VSp-vN-ZZL"/>
+                                                <constraint firstItem="PAt-E1-cMM" firstAttribute="leading" secondItem="i2c-Va-Uw4" secondAttribute="leadingMargin" id="RPx-pK-Pyo"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="3y2-xO-dTW" secondAttribute="trailing" constant="60" id="VSp-vN-ZZL"/>
                                                 <constraint firstItem="2cq-ju-bWO" firstAttribute="leading" secondItem="3y2-xO-dTW" secondAttribute="leading" constant="-25" id="Zl6-bi-Qiv"/>
                                                 <constraint firstItem="2cq-ju-bWO" firstAttribute="trailing" secondItem="3y2-xO-dTW" secondAttribute="trailing" constant="10" id="Zyz-BY-se3"/>
                                                 <constraint firstItem="Vzu-eb-djE" firstAttribute="leading" secondItem="3y2-xO-dTW" secondAttribute="leading" id="e3e-Ew-Xf4"/>
@@ -191,20 +191,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="redraw" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="Afj-qf-Efm" userLabel="bubbleView" customClass="BubbleView" customModule="SimpleChat">
-                                                    <rect key="frame" x="71" y="23" width="232" height="39.5"/>
+                                                    <rect key="frame" x="65" y="23" width="250" height="39.5"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="image" keyPath="image" value="bubble_nine_orange"/>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="@ChatMessage" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4iW-eo-ufv" userLabel="chatLabel">
-                                                    <rect key="frame" x="81" y="33" width="202" height="19.5"/>
+                                                    <rect key="frame" x="75" y="33" width="220" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CJ-as-Y8k" customClass="AvatarView" customModule="SimpleChat">
-                                                    <rect key="frame" x="308" y="23" width="40" height="40"/>
+                                                    <rect key="frame" x="320" y="23" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="O6y-C3-Ocj"/>
                                                         <constraint firstAttribute="height" constant="40" id="a80-vx-Bs5"/>
@@ -220,7 +220,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="@TimeStamp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0u5-Rt-huL" userLabel="timestamp">
-                                                    <rect key="frame" x="71" y="67.5" width="212" height="12"/>
+                                                    <rect key="frame" x="65" y="67.5" width="230" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -229,7 +229,7 @@
                                             <constraints>
                                                 <constraint firstItem="Afj-qf-Efm" firstAttribute="leading" secondItem="4iW-eo-ufv" secondAttribute="leading" constant="-10" id="0OL-C4-zOe"/>
                                                 <constraint firstItem="4iW-eo-ufv" firstAttribute="top" secondItem="1CJ-as-Y8k" secondAttribute="top" constant="10" id="4xG-Br-Gby"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="1CJ-as-Y8k" secondAttribute="trailing" constant="12" id="AiR-yi-jUl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1CJ-as-Y8k" secondAttribute="trailing" id="AiR-yi-jUl"/>
                                                 <constraint firstItem="1CJ-as-Y8k" firstAttribute="top" secondItem="vX8-h0-MUn" secondAttribute="topMargin" constant="12" id="GlO-e3-9zd"/>
                                                 <constraint firstItem="0u5-Rt-huL" firstAttribute="trailing" secondItem="4iW-eo-ufv" secondAttribute="trailing" id="NYV-Qu-5Z5"/>
                                                 <constraint firstItem="0u5-Rt-huL" firstAttribute="top" secondItem="Afj-qf-Efm" secondAttribute="bottom" constant="5" id="PYp-zy-H9Q"/>
@@ -239,7 +239,7 @@
                                                 <constraint firstItem="1CJ-as-Y8k" firstAttribute="leading" secondItem="4iW-eo-ufv" secondAttribute="trailing" constant="25" id="fzY-qA-6Nk"/>
                                                 <constraint firstItem="Afj-qf-Efm" firstAttribute="top" secondItem="4iW-eo-ufv" secondAttribute="top" constant="-10" id="kte-ve-qBJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="0u5-Rt-huL" secondAttribute="bottom" constant="10" id="pwU-KO-Yv3"/>
-                                                <constraint firstItem="4iW-eo-ufv" firstAttribute="leading" secondItem="vX8-h0-MUn" secondAttribute="leadingMargin" constant="66" id="zeY-NU-aUh"/>
+                                                <constraint firstItem="4iW-eo-ufv" firstAttribute="leading" secondItem="vX8-h0-MUn" secondAttribute="leadingMargin" constant="60" id="zeY-NU-aUh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -258,20 +258,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="@TimeStamp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXA-LY-U2x" userLabel="timestamp">
-                                                    <rect key="frame" x="79" y="161" width="130" height="14.5"/>
+                                                    <rect key="frame" x="67" y="161" width="130" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Crc-IU-chC">
-                                                    <rect key="frame" x="79" y="23" width="130" height="130"/>
+                                                    <rect key="frame" x="67" y="23" width="130" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="130" id="NPq-xR-c3z"/>
                                                         <constraint firstAttribute="height" constant="130" id="qdR-ge-0Rq"/>
                                                     </constraints>
                                                 </imageView>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8P6-iH-wVa" customClass="AvatarView" customModule="SimpleChat">
-                                                    <rect key="frame" x="27" y="23" width="40" height="40"/>
+                                                    <rect key="frame" x="15" y="23" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="PRz-K6-Spm"/>
                                                         <constraint firstAttribute="width" constant="40" id="jnK-oA-C7K"/>
@@ -287,7 +287,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uTS-v9-9tV">
-                                                    <rect key="frame" x="79" y="23" width="130" height="130"/>
+                                                    <rect key="frame" x="67" y="23" width="130" height="130"/>
                                                     <state key="normal" image="play"/>
                                                     <connections>
                                                         <action selector="onPlayButtonTap:" destination="nxK-wz-wpr" eventType="touchUpInside" id="L3x-i4-v8z"/>
@@ -298,7 +298,7 @@
                                                 <constraint firstItem="uTS-v9-9tV" firstAttribute="leading" secondItem="Crc-IU-chC" secondAttribute="leading" id="1Ol-f0-WU6"/>
                                                 <constraint firstItem="Crc-IU-chC" firstAttribute="top" secondItem="8P6-iH-wVa" secondAttribute="top" id="2Od-7V-QPL"/>
                                                 <constraint firstItem="uTS-v9-9tV" firstAttribute="bottom" secondItem="Crc-IU-chC" secondAttribute="bottom" id="3oI-S0-HLq"/>
-                                                <constraint firstItem="8P6-iH-wVa" firstAttribute="leading" secondItem="Cdj-qE-kGV" secondAttribute="leadingMargin" constant="12" id="AeD-77-FD1"/>
+                                                <constraint firstItem="8P6-iH-wVa" firstAttribute="leading" secondItem="Cdj-qE-kGV" secondAttribute="leadingMargin" id="AeD-77-FD1"/>
                                                 <constraint firstItem="uTS-v9-9tV" firstAttribute="trailing" secondItem="Crc-IU-chC" secondAttribute="trailing" id="Fg2-ts-wfm"/>
                                                 <constraint firstItem="tXA-LY-U2x" firstAttribute="top" secondItem="Crc-IU-chC" secondAttribute="bottom" constant="8" id="FmF-Wk-Dc4"/>
                                                 <constraint firstItem="tXA-LY-U2x" firstAttribute="trailing" secondItem="Crc-IU-chC" secondAttribute="trailing" id="UCo-kO-hkG"/>
@@ -324,7 +324,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8a-E8-ElY" customClass="AvatarView" customModule="SimpleChat">
-                                                    <rect key="frame" x="308" y="23" width="40" height="40"/>
+                                                    <rect key="frame" x="320" y="23" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="40" id="kto-2A-ikj"/>
                                                         <constraint firstAttribute="height" constant="40" id="mGS-CI-RFS"/>
@@ -340,20 +340,20 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ec6-0B-HIV">
-                                                    <rect key="frame" x="166" y="23" width="130" height="130"/>
+                                                    <rect key="frame" x="178" y="23" width="130" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="6Ye-iX-xgu"/>
                                                         <constraint firstAttribute="width" constant="130" id="pCK-b0-Qmd"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="@TimeStamp" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOT-UC-T3f" userLabel="timestamp">
-                                                    <rect key="frame" x="166" y="161" width="130" height="14.5"/>
+                                                    <rect key="frame" x="178" y="161" width="130" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30l-pZ-eFr">
-                                                    <rect key="frame" x="166" y="23" width="130" height="130"/>
+                                                    <rect key="frame" x="178" y="23" width="130" height="130"/>
                                                     <state key="normal" image="play"/>
                                                     <connections>
                                                         <action selector="onPlayButtonTap:" destination="Gyv-Qq-dqz" eventType="touchUpInside" id="BVI-Al-TG4"/>
@@ -370,7 +370,7 @@
                                                 <constraint firstItem="H8a-E8-ElY" firstAttribute="top" secondItem="1qa-7B-7S7" secondAttribute="topMargin" constant="12" id="V0g-Um-ekj"/>
                                                 <constraint firstItem="30l-pZ-eFr" firstAttribute="top" secondItem="Ec6-0B-HIV" secondAttribute="top" id="X2J-YB-SFz"/>
                                                 <constraint firstItem="Ec6-0B-HIV" firstAttribute="top" secondItem="H8a-E8-ElY" secondAttribute="top" id="YHm-DO-uVt"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="H8a-E8-ElY" secondAttribute="trailing" constant="12" id="guP-Aj-B7q"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="H8a-E8-ElY" secondAttribute="trailing" id="guP-Aj-B7q"/>
                                                 <constraint firstItem="H8a-E8-ElY" firstAttribute="leading" secondItem="Ec6-0B-HIV" secondAttribute="trailing" constant="12" id="hn0-bm-V3C"/>
                                                 <constraint firstAttribute="bottom" secondItem="GOT-UC-T3f" secondAttribute="bottom" constant="4.5" id="jVH-yD-Z59"/>
                                             </constraints>

@@ -8,8 +8,15 @@
 
 import Foundation
 
-class FileController {
+protocol FileControllerProtocol {
 
+    func saveMovie(data: Data) -> URL?
+}
+
+class FileController: FileControllerProtocol {
+
+    // MARK: - Public interface
+    
     func saveMovie(data: Data) -> URL? {
         var url: URL?
         let fileName = UUID().uuidString

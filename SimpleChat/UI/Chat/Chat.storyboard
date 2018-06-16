@@ -20,16 +20,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ai6-js-da9">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                                 <connections>
                                     <segue destination="P8u-C6-T8v" kind="embed" identifier="ChatViewController" id="p8U-63-OyX"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzg-iY-zNz" userLabel="SendingView">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-lb-BVV" userLabel="Send Video Button">
-                                        <rect key="frame" x="327" y="5" width="40" height="40"/>
+                                        <rect key="frame" x="327" y="20" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="bdz-tx-ycf"/>
                                             <constraint firstAttribute="height" constant="40" id="mZL-au-P9Z"/>
@@ -40,7 +40,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type message" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="MHi-qf-eTw">
-                                        <rect key="frame" x="16" y="10" width="247" height="30"/>
+                                        <rect key="frame" x="16" y="25" width="247" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no"/>
@@ -50,7 +50,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aG-ao-rSG" userLabel="Send Text Button">
-                                        <rect key="frame" x="279" y="5" width="40" height="40"/>
+                                        <rect key="frame" x="279" y="20" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="0Ip-7F-i3P"/>
                                             <constraint firstAttribute="width" constant="40" id="Zh8-LB-uXh"/>
@@ -69,7 +69,7 @@
                                     <constraint firstAttribute="trailing" secondItem="aF5-lb-BVV" secondAttribute="trailing" constant="8" id="Wbh-mf-aGf"/>
                                     <constraint firstItem="MHi-qf-eTw" firstAttribute="centerY" secondItem="hzg-iY-zNz" secondAttribute="centerY" id="Yg5-UE-PEi"/>
                                     <constraint firstItem="aF5-lb-BVV" firstAttribute="leading" secondItem="9aG-ao-rSG" secondAttribute="trailing" constant="8" id="qiW-bV-fgX"/>
-                                    <constraint firstAttribute="height" constant="50" id="qoh-dJ-TyH"/>
+                                    <constraint firstAttribute="height" constant="80" id="qoh-dJ-TyH"/>
                                     <constraint firstItem="9aG-ao-rSG" firstAttribute="leading" secondItem="MHi-qf-eTw" secondAttribute="trailing" constant="16" id="vQ5-MD-fwL"/>
                                 </constraints>
                             </view>
@@ -77,7 +77,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hzg-iY-zNz" firstAttribute="top" secondItem="Ai6-js-da9" secondAttribute="bottom" id="84B-Pj-0ul"/>
-                            <constraint firstItem="1Yc-H4-qSn" firstAttribute="bottom" secondItem="hzg-iY-zNz" secondAttribute="bottom" id="A3M-VG-XZ6"/>
+                            <constraint firstAttribute="bottom" secondItem="hzg-iY-zNz" secondAttribute="bottom" id="A3M-VG-XZ6"/>
                             <constraint firstItem="Ai6-js-da9" firstAttribute="top" secondItem="Ptv-oo-RqO" secondAttribute="top" id="DbT-4C-VhW"/>
                             <constraint firstItem="hzg-iY-zNz" firstAttribute="leading" secondItem="1Yc-H4-qSn" secondAttribute="leading" id="F4A-Mw-DUn"/>
                             <constraint firstItem="Ai6-js-da9" firstAttribute="leading" secondItem="1Yc-H4-qSn" secondAttribute="leading" id="Umb-ds-x9q"/>
@@ -108,11 +108,11 @@
             <objects>
                 <viewController id="P8u-C6-T8v" customClass="ChatViewController" customModule="SimpleChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gR9-iY-dvq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="90" estimatedRowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gHI-ut-6gM" userLabel="Chat Table View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.65074837919999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>

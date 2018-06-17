@@ -79,6 +79,13 @@ class WebSocketController {
         self.webSocket.binaryType = .nsData
     }
 
+    var isOpened: Bool {
+        if case .open = webSocket.readyState {
+            return true
+        }
+        return false
+    }
+
     // MARK: - Private
 
     fileprivate func sendDataChunks(data: Data) {
@@ -89,13 +96,6 @@ class WebSocketController {
                 self.webSocket.send(dataChunk)
             }
         }
-    }
-
-    var isOpened: Bool {
-        if case .open = webSocket.readyState {
-            return true
-        }
-        return false
     }
 
 }

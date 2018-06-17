@@ -54,6 +54,8 @@ class DataCoderControllerTests: XCTestCase {
         dataCoderController.receivedDataClosure = { data in
             XCTAssertEqual(input.count, data.count)
             XCTAssertEqual(input, data)
+            XCTAssertEqual(dataCoderController.isDataCompleted, true)
+            XCTAssertEqual(dataCoderController.isOutputError, false)
             expectation.fulfill()
         }
         dataCoderController.decode(data: encodedData[0])
@@ -68,11 +70,45 @@ class DataCoderControllerTests: XCTestCase {
         dataCoderController.receivedDataClosure = { data in
             XCTAssertEqual(input.count, data.count)
             XCTAssertEqual(input, data)
+            XCTAssertEqual(dataCoderController.isDataCompleted, true)
+            XCTAssertEqual(dataCoderController.isOutputError, false)
             expectation.fulfill()
         }
         dataCoderController.decode(data: encodedData[0])
         dataCoderController.decode(data: encodedData[1])
         dataCoderController.decode(data: encodedData[2])
+    }
+
+    func testDecodeWrongChunk() {
+
+        let expectation = XCTestExpectation(description: "Decode data")
+        let dataCoderController = DataCoderController()
+        let input = randomDataGenerator(count: 300000)
+        let encodedData = dataCoderController.encode(data: input)
+        dataCoderController.receivedDataClosure = { data in
+            XCTFail()
+            expectation.fulfill()
+        }
+        dataCoderController.decode(data: encodedData[0])
+        XCTAssertEqual(dataCoderController.isDataCompleted, false)
+        XCTAssertEqual(dataCoderController.isOutputError, false)
+
+        // insert wrong chunk number (4 insted of 1)
+        var chunk2 = encodedData[1]
+        chunk2[4] = 5
+        dataCoderController.decode(data: chunk2)
+        XCTAssertEqual(dataCoderController.isDataCompleted, false)
+        XCTAssertEqual(dataCoderController.isOutputError, true)
+
+        // insert good chunk 1
+        dataCoderController.decode(data: encodedData[1])
+        XCTAssertEqual(dataCoderController.isDataCompleted, false)
+        XCTAssertEqual(dataCoderController.isOutputError, true)
+
+        // send one againg first chunk (should reset mechanism)
+        dataCoderController.decode(data: encodedData[0])
+        XCTAssertEqual(dataCoderController.isDataCompleted, false)
+        XCTAssertEqual(dataCoderController.isOutputError, false)
     }
 
     // MARK: - Helper functions

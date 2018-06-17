@@ -26,13 +26,13 @@ class DataCoderController: DataCoderControllerProtocol {
     // 0 byte - 11
     // 1 byte - 22
     // 2 byte - 33
-    // 3 byte - chunk number high
-    // 4 byte - chunk number Low
+    // 3 byte - chunk index high
+    // 4 byte - chunk index low
     // 5 byte - chunk count high
     // 6 byte - chunk count low
     fileprivate var header: [UInt8] = [11, 22, 33, 0, 0, 0, 0]
 
-    // Depeneds on the server size
+    // chunkLen - depends on the server size
     fileprivate let chunkLen = 130000
 
     weak var delegate: DataCoderDelegateProtocol?
@@ -45,7 +45,7 @@ class DataCoderController: DataCoderControllerProtocol {
         return addHeaders(data: data)
     }
 
-    // Data is returned as a DataCoderDelegateProtocol delegate
+    // Data is returned as a receivedDataClosure
     func decode(data: Data) {
         addChunk(data: data)
         if isDataCompleted && !isOutputError {
@@ -96,8 +96,8 @@ class DataCoderController: DataCoderControllerProtocol {
     fileprivate var outputChunks: [Data] = []
     fileprivate var numberOfChunks = 0
     fileprivate var currentChunkNumber = 0
-    fileprivate var isOutputError = false
-    fileprivate var isDataCompleted = false
+    fileprivate(set) var isOutputError = false
+    fileprivate(set) var isDataCompleted = false
 
     fileprivate func addChunk(data: Data) {
 
@@ -110,25 +110,34 @@ class DataCoderController: DataCoderControllerProtocol {
         let elementIndex = Int((data[3] << 8) | data[4])
         let elementCount = Int((data[5] << 8) | data[6])
 
+        // First element resets decode mechanism and sets number of chunks
         if elementIndex == 0 {
             numberOfChunks = elementCount
             currentChunkNumber = 0
+            outputChunks.removeAll()
             isOutputError = false
             isDataCompleted = false
         }
 
-        if elementIndex > numberOfChunks - 1 || elementIndex != currentChunkNumber {
+        // Protection against output error, or wrong chunk index
+        if isOutputError == true || elementIndex > numberOfChunks - 1 || elementIndex != currentChunkNumber {
+            numberOfChunks = 0
+            currentChunkNumber = 0
+            outputChunks.removeAll()
             isOutputError = true
             isDataCompleted = false
             return
         }
 
+        // Add chunk to decode buffer
         if elementIndex == currentChunkNumber {
             outputChunks += [data[header.count...data.count - 1]]
         }
 
+        // Set decode mechanism as completed if last chunk is added
         if (elementIndex == numberOfChunks - 1) {
             isDataCompleted = true
+            return
         }
 
         currentChunkNumber += 1

@@ -9,9 +9,11 @@ Application allowing to send and receive messages to / from a web socket server.
 App uses websocket echo server provided by Kaazing. All sent messages are immediately sent back.
 
 ### How it works:
-- App automativally connectes to the socket server
+- App automatically connects to the socket server
 - Socket server sent back immediately all the messages 
-- User can send text messages by writing in text box. Pressing send button message is sent to socket server.
+- All me messages (text and video) are shown on chat view. Sent messages are shown on the right side and received on the left side
+- Sender and receiver are indicated by avatar icon with the first character
+- User can send text messages by writing in text box. After pressing send button message is sent to socket server.
 - User can also send video messages by selecting it from the Photos App
 - All the videos from the chat list can by played by pressing on them
 
@@ -23,7 +25,7 @@ NOTE: How to update Carthage dependecies:
 ## Architecture
 
 ### Modified MVC
-Because of usage storyboards introduction of pure MVVM is not so easy, because view is integrated with ViewControllers. Instead of it View Controller is separated by ViewModel and Controller
+Due of usage storyboards introduction of pure MVVM is not so easy, because view is integrated with ViewControllers. Instead of it View Controller is separated by ViewModel and Controller
 
 ### Storyboards
 For that simple app storyboards are good solution. Storyboards are split to possible small scenes accordingly to the ViewControllers

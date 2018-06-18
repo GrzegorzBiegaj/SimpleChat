@@ -20,14 +20,16 @@ protocol WebSocketControllerDelegate: class {
 
 class WebSocketController {
 
+    fileprivate var coderController: DataCoderControllerProtocol
+    fileprivate let webSocket: WebSocket
+
     // MARK: - Public interface
 
-    let webSocket: WebSocket
-    var coderController: DataCoderControllerProtocol
+    static let shared = WebSocketController()
 
     weak var delegate: WebSocketControllerDelegate?
 
-    init(coderController: DataCoderControllerProtocol = DataCoderController()) {
+    private init(coderController: DataCoderControllerProtocol = DataCoderController()) {
         self.coderController = coderController
         self.webSocket = WebSocket("ws://echo.websocket.org")
         self.webSocket.delegate = self
@@ -73,20 +75,20 @@ class WebSocketController {
         return isOpened
     }
 
-    func open() {
+    // MARK: - Private
+
+    fileprivate func open() {
         webSocket.open()
         self.webSocket.delegate = self
         self.webSocket.binaryType = .nsData
     }
 
-    var isOpened: Bool {
+    fileprivate var isOpened: Bool {
         if case .open = webSocket.readyState {
             return true
         }
         return false
     }
-
-    // MARK: - Private
 
     fileprivate func sendDataChunks(data: Data) {
         print ("Send video size: \(data.count)")

@@ -17,7 +17,7 @@ class ConversationViewController: UIViewController {
 
     let viewModel = ConversationViewModel()
     let chatViewModel = ChatViewModel()
-    let webSocketController = WebSocketController()
+    let webSocketController = WebSocketController.shared
 
     lazy var videoPicker = UIImagePickerController()
     

@@ -110,6 +110,8 @@ class DataCoderController: DataCoderControllerProtocol {
         let elementIndex = Int((data[3] << 8) | data[4])
         let elementCount = Int((data[5] << 8) | data[6])
 
+        print ("Received video package element: \(elementIndex + 1) of \(elementCount)")
+
         // First element resets decode mechanism and sets number of chunks
         if elementIndex == 0 {
             numberOfChunks = elementCount

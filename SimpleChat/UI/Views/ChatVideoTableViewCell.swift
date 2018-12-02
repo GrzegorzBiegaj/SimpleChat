@@ -46,7 +46,7 @@ class ChatVideoTableViewCell: UITableViewCell {
                 let asset = AVAsset(url: url)
                 let assetImgGenerate = AVAssetImageGenerator(asset: asset)
                 assetImgGenerate.appliesPreferredTrackTransform = true
-                let time = CMTimeMake(1, 2)
+                let time = CMTimeMake(value: 1, timescale: 2)
                 let img = try? assetImgGenerate.copyCGImage(at: time, actualTime: nil)
                 guard let newImage = img else { return }
                 let frameImg = UIImage(cgImage: newImage)

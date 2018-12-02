@@ -56,8 +56,8 @@ class ConversationViewModel {
     
     func isKeyboardShown(notification: NSNotification, view: UIView) -> KeyboardResult {
         guard let userInfo = notification.userInfo,
-            let keyboardFrameEndUserInfoKey: NSValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue,
-            let animateDuration = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval,
+            let keyboardFrameEndUserInfoKey: NSValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
+            let animateDuration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? TimeInterval,
             let viewFrame = view.window?.frame else { return KeyboardResult(isShown: false, hight: 0, animateDuration: 0) }
 
         let keyboardRect = keyboardFrameEndUserInfoKey.cgRectValue

@@ -64,7 +64,7 @@ class AvatarView: UIView {
             textLayer.foregroundColor = color
         }
         textLayer.contentsScale = UIScreen.main.scale
-        textLayer.alignmentMode = kCAAlignmentCenter
+        textLayer.alignmentMode = CATextLayerAlignmentMode.center
         textLayer.position = CGPoint(x: bounds.midX, y: bounds.midY)
         textLayer.frame = CGRect(x: layer.bounds.origin.x, y: (layer.bounds.height - font.lineHeight) / 2, width: layer.bounds.width, height: font.lineHeight)
         layer.addSublayer(textLayer)

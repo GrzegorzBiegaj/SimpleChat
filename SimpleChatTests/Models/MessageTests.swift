@@ -24,8 +24,8 @@ class MessageTests: XCTestCase {
         XCTAssertEqual(message1, message2)
         XCTAssertNotEqual(message1, message3)
 
-        let message4 = Message(entry: entry1, side: side2, timeStamp: Date())
-        let message5 = Message(entry: entry1, side: side2, timeStamp: Date())
+        let message4 = Message(entry: entry1, side: side2, timeStamp: date)
+        let message5 = Message(entry: entry1, side: side2, timeStamp: date)
 
         XCTAssertEqual(message4, message5)
     }

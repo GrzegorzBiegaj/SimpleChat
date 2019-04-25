@@ -42,4 +42,4 @@ Carthage is used as a dependency manager. Advantage in comparison to Cocoapods i
 * [SwiftWebSocket](https://github.com/tidwall/SwiftWebSocket) - Socket server. SDK
 
 ### Programming tools
-Xcode 9.3, swift 4.1
+Xcode 10.2.1, swift 5.0

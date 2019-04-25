@@ -84,7 +84,7 @@ class DataCoderController: DataCoderControllerProtocol {
             header[4] = UInt8(index & 0xff)
             header[5] = UInt8(data.count >> 8)
             header[6] = UInt8(data.count & 0xff)
-            var tempData = Data(bytes: header)
+            var tempData = Data(header)
             tempData.append(contentsOf: item)
             result += [tempData]
         }
@@ -105,7 +105,7 @@ class DataCoderController: DataCoderControllerProtocol {
         let inputConst = data[0...2]
 
         // Ignore other data than header
-        guard NSData(data: Data(bytes: headerConst)).isEqual(to: inputConst) else { return }
+        guard NSData(data: Data(headerConst)).isEqual(to: inputConst) else { return }
 
         let elementIndex = Int((data[3] << 8) | data[4])
         let elementCount = Int((data[5] << 8) | data[6])
